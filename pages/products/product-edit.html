@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Edit Product - Your Store Name</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        #messageContainer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="container my-4">
+        <h1 class="mb-4" id="pageTitle">Add/Edit Product</h1>
+
+        <!-- Message Container -->
+        <div id="messageContainer" class="alert"></div>
+        
+        <form id="productForm">
+            <input type="hidden" id="productId">
+            <div class="mb-3">
+                <label for="productName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="productName" required>
+            </div>
+            <div class="mb-3">
+                <label for="productCategory" class="form-label">Category</label>
+                <select class="form-select" id="productCategory" required>
+                    <option value="">Select a category</option>
+                    <!-- Categories will be populated dynamically -->
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="productSubcategory" class="form-label">Subcategory</label>
+                <select class="form-select" id="productSubcategory" required>
+                    <option value="">Select a subcategory</option>
+                    <!-- Subcategories will be populated dynamically -->
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="productPrice" class="form-label">Price</label>
+                <input type="number" class="form-control" id="productPrice" step="0.01" required>
+            </div>
+            <div class="mb-3">
+                <label for="productStock" class="form-label">Stock</label>
+                <input type="number" class="form-control" id="productStock" required>
+            </div>
+            <div class="mb-3">
+                <label for="productDescription" class="form-label">Description</label>
+                <textarea class="form-control" id="productDescription" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="productImages" class="form-label">Images (|-separated URLs)</label>
+                <input type="text" class="form-control" id="productImages" required>
+            </div>
+            <div class="mb-3">
+                <label for="productSpecifications" class="form-label">Specifications</label>
+                <div id="specificationsContainer" class="row border">
+                    <!-- Specification fields will be dynamically added here -->
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" id="saveProductBtn">Save Product</button>
+            <a href="product-add.html" class="btn btn-secondary">Cancel</a>
+        </form>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/load-common-elements.js"></script>
+    <script type="module" src="/js/product-edit.js"></script>
+</body>
+</html>
